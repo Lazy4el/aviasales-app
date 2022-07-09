@@ -1,0 +1,73 @@
+.flter_transplant {
+  grid-row: 1/4;
+  background: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding-bottom: 10px;
+  align-self: start;
+
+  &__title {
+    padding: 20px 20px 10px;
+
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #4a4a4a;
+  }
+  &__item {
+    position: relative;
+    padding: 10px 20px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+
+    color: #4a4a4a;
+    transition: 0.4s all;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.4s all;
+      background: #f1fcff;
+    }
+  }
+  &__text {
+    position: relative;
+    display: flex;
+
+    &::before {
+      position: relative;
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #2196f3;
+      border-radius: 2px;
+      margin-right: 10px;
+    }
+  }
+
+  &__checkbox {
+    z-index: -1;
+    opacity: 0;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+
+    &:checked + .flter_transplant__text::before {
+      background: url("../../assets/Shape.svg") no-repeat center;
+    }
+    &:focus + .flter_transplant__text::before {
+      outline: 2px solid #2196f3;
+    }
+  }
+}

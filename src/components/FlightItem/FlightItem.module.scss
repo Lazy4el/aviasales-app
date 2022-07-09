@@ -1,0 +1,49 @@
+.flight_item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  &__head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__title {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    color: #2196f3;
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 20px;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__description_title {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #a0b0b9;
+  }
+
+  &__description_text {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4a4a4a;
+  }
+}

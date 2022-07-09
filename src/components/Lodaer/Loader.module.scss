@@ -1,0 +1,10 @@
+.loader {
+  left: 0;
+  bottom: 0;
+  padding: 5px 15px;
+  width: 100%;
+  background: rgba($color: #2196f3, $alpha: 0.7);
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+}

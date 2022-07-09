@@ -1,0 +1,39 @@
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: start;
+
+  &__item {
+    padding: 15px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #ffffff;
+    border: 1px solid #dfe5ec;
+    color: #4a4a4a;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s all;
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    &:hover:not(.tabs__active) {
+      transition: 0.4s all;
+      background: #f1fcff;
+    }
+  }
+
+  &__active {
+    color: #fff;
+    background: #2196f3;
+  }
+}
