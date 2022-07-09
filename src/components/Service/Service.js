@@ -4,6 +4,7 @@ class Service {
   // Запросы
   _getResponse = async (url, option = {}) => {
     const request = await fetch(this.baseUrl + url, option);
+    if (request.status !== 500 && !request.ok) throw true;
     const response = await request.json();
     return response;
   };
@@ -19,6 +20,7 @@ class Service {
   getTikets = async (id) => {
     const url = `tickets?searchId=${id}`;
     let response = await this._getResponse(url);
+
     return response;
   };
 }

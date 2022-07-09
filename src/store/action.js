@@ -13,7 +13,7 @@ export const filterTransfersThree = () => ({ type: 'FILTER_TRANSFERS_THREE' });
 export const tiketsLoading = () => ({ type: 'TIKETS_LOADING' });
 export const tiketsLoaded = () => ({ type: 'TIKETS_LOADED' });
 export const tiketsAdd = (payload) => ({ type: 'TIKETS_ADD', payload });
-export const tiketsError = (payload) => ({ type: 'TIKETS_ERROR', payload });
+export const tiketsError = () => ({ type: 'TIKETS_ERROR' });
 
 export const viewMoreTikets = () => ({ type: 'VIEW_MORE_TIKETS' });
 
@@ -29,6 +29,7 @@ const getTikets = async (id, dispatch) => {
       getTikets(id, dispatch);
     }
   } catch (e) {
+    if (e === true) return dispatch.tiketsError();
     getTikets(id, dispatch);
   }
 };

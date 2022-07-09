@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../store/action';
 import FlightItem from '../FlightItem/FlightItem.jsx';
-import { AlertFilter } from '../Alert/Alert.jsx';
+import { AlertFilter, ErrorDate } from '../Alert/Alert.jsx';
 import ShowMore from '../ShowMore/ShowMore.jsx';
 import Loader from '../Lodaer/Loader.jsx';
 
 import classes from './FlightList.module.scss';
 
 const FlightList = (store) => {
-  const { tickets, sortTab, filterTransfers } = store;
+  const { tickets, sortTab, filterTransfers, ticketsError } = store;
 
   let filterTikets = [...tickets];
   let selectedFilters = [10];
+  let doneFilterTikets;
 
   for (let filter in filterTransfers) {
     if (filterTransfers['all']) selectedFilters.push(10);
@@ -25,6 +26,8 @@ const FlightList = (store) => {
   }
   selectedFilters = new Set([...selectedFilters]);
   selectedFilters = [...selectedFilters];
+
+  if (ticketsError) return <ErrorDate></ErrorDate>;
 
   useEffect(() => {
     const { getIdTikets } = actions;
@@ -62,14 +65,12 @@ const FlightList = (store) => {
     return selectedFilters.includes(ticketTransfersCount);
   });
 
+  doneFilterTikets = filterTikets.slice(0, store.ticketsCounter).map((element, idx) => {
+    return <FlightItem key={idx} elem={element}></FlightItem>;
+  });
+
   // Рендер
-  const renderTikets = !filterTikets.length ? (
-    <AlertFilter></AlertFilter>
-  ) : (
-    filterTikets.slice(0, store.ticketsCounter).map((element, idx) => {
-      return <FlightItem key={idx} elem={element}></FlightItem>;
-    })
-  );
+  const renderTikets = !filterTikets.length ? <AlertFilter></AlertFilter> : doneFilterTikets;
 
   const renderButton = filterTikets.length ? <ShowMore></ShowMore> : null;
 
@@ -86,6 +87,7 @@ const FlightList = (store) => {
 const mapStateToProps = (store) => {
   return {
     filterTransfers: store.filterTransfers,
+    ticketsError: store.ticketsError,
     tickets: store.tickets,
     sortTab: store.sortTab,
     ticketsCounter: store.ticketsCounter,
