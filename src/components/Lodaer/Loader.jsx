@@ -4,8 +4,6 @@ import { Spin } from 'antd';
 import 'antd/dist/antd.css';
 import classes from './Loader.module.scss';
 
-console.log(classes);
-
 const antIcon = (
   <LoadingOutlined
     spin

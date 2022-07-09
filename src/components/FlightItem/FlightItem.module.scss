@@ -10,7 +10,7 @@
     margin-bottom: 20px;
   }
   &__title {
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -28,7 +28,7 @@
   }
 
   &__description_title {
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -39,11 +39,20 @@
   }
 
   &__description_text {
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
     color: #4a4a4a;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .flight_item {
+    &__description_title {
+      font-size: 10px;
+      letter-spacing: 0;
+    }
   }
 }

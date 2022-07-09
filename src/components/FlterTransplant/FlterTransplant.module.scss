@@ -9,7 +9,7 @@
   &__title {
     padding: 20px 20px 10px;
 
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -23,7 +23,7 @@
   &__item {
     position: relative;
     padding: 10px 20px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -46,7 +46,7 @@
 
     &::before {
       position: relative;
-      content: "";
+      content: '';
       display: block;
       width: 20px;
       height: 20px;
@@ -64,7 +64,7 @@
     width: 20px;
 
     &:checked + .flter_transplant__text::before {
-      background: url("../../assets/Shape.svg") no-repeat center;
+      background: url('../../assets/Shape.svg') no-repeat center;
     }
     &:focus + .flter_transplant__text::before {
       outline: 2px solid #2196f3;

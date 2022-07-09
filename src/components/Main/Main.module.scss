@@ -3,3 +3,11 @@ main {
   grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
+
+@media screen and (max-width: 576px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -5,7 +5,7 @@
 
   &__item {
     padding: 15px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -35,5 +35,12 @@
   &__active {
     color: #fff;
     background: #2196f3;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tabs__item {
+    font-size: 10px;
+    line-height: 12px;
   }
 }
